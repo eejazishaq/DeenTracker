@@ -23,7 +23,7 @@ class HomePage extends ConsumerWidget {
     final useArabic = context.locale.languageCode == 'ar';
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.softIvory,
       body: settings.when(
         loading: () => const Center(child: CircularProgressIndicator()),
         error: (error, _) => Center(child: Text(error.toString())),

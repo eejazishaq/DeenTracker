@@ -37,7 +37,8 @@ class NusukNextPrayerOverlayCard extends StatefulWidget {
       _NusukNextPrayerOverlayCardState();
 }
 
-class _NusukNextPrayerOverlayCardState extends State<NusukNextPrayerOverlayCard> {
+class _NusukNextPrayerOverlayCardState
+    extends State<NusukNextPrayerOverlayCard> {
   Timer? _countdownTimer;
 
   @override
@@ -107,7 +108,7 @@ class _ClassicDesign extends StatelessWidget {
         borderRadius: BorderRadius.circular(28),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.08),
+            color: Colors.black.withValues(alpha: 0.07),
             blurRadius: 24,
             offset: const Offset(0, 10),
           ),
@@ -182,7 +183,6 @@ class _MinimalDesign extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: const Color(0xFFE2E8F0)),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withValues(alpha: 0.06),
@@ -259,6 +259,8 @@ class _GradientDesign extends StatelessWidget {
   final String nextTime;
   final String countdown;
 
+  static const _footerTint = Color(0xFFF4F8F6);
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -268,9 +270,14 @@ class _GradientDesign extends StatelessWidget {
         borderRadius: BorderRadius.circular(28),
         boxShadow: [
           BoxShadow(
-            color: AppColors.deepEmerald.withValues(alpha: 0.12),
-            blurRadius: 20,
-            offset: const Offset(0, 8),
+            color: Colors.black.withValues(alpha: 0.07),
+            blurRadius: 28,
+            offset: const Offset(0, 12),
+          ),
+          BoxShadow(
+            color: AppColors.deepEmerald.withValues(alpha: 0.08),
+            blurRadius: 18,
+            offset: const Offset(0, 4),
           ),
         ],
       ),
@@ -332,35 +339,53 @@ class _GradientDesign extends StatelessWidget {
               ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(20, 16, 20, 18),
+          Container(
+            margin: const EdgeInsets.fromLTRB(12, 12, 12, 14),
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+            decoration: BoxDecoration(
+              color: _footerTint,
+              borderRadius: BorderRadius.circular(20),
+            ),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'prayer_time_remaining'.tr(),
-                      style: GoogleFonts.inter(
-                        color: const Color(0xFF64748B),
-                        fontSize: 12,
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'prayer_time_remaining'.tr(),
+                        style: GoogleFonts.inter(
+                          color: const Color(0xFF64748B),
+                          fontSize: 11,
+                          fontWeight: FontWeight.w500,
+                          letterSpacing: 0.2,
+                        ),
                       ),
-                    ),
-                    const SizedBox(height: 4),
-                    Text(
-                      countdown,
-                      style: GoogleFonts.jetBrainsMono(
-                        color: AppColors.deepEmerald,
-                        fontSize: 22,
-                        fontWeight: FontWeight.w700,
+                      const SizedBox(height: 6),
+                      Text(
+                        countdown,
+                        style: GoogleFonts.jetBrainsMono(
+                          color: AppColors.deepEmerald,
+                          fontSize: 24,
+                          fontWeight: FontWeight.w700,
+                          letterSpacing: 0.5,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-                Icon(
-                  Icons.arrow_forward_rounded,
-                  color: AppColors.deepEmerald.withValues(alpha: 0.8),
+                Container(
+                  width: 40,
+                  height: 40,
+                  decoration: BoxDecoration(
+                    color: AppColors.deepEmerald.withValues(alpha: 0.12),
+                    shape: BoxShape.circle,
+                  ),
+                  child: Icon(
+                    Icons.schedule_rounded,
+                    color: AppColors.deepEmerald.withValues(alpha: 0.9),
+                    size: 20,
+                  ),
                 ),
               ],
             ),
@@ -382,9 +407,8 @@ class _CountdownPill extends StatelessWidget {
       width: double.infinity,
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
       decoration: BoxDecoration(
-        color: const Color(0xFFF8FAFC),
+        color: const Color(0xFFF4F8F6),
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: const Color(0xFFE2E8F0)),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

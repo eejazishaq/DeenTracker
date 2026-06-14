@@ -34,7 +34,7 @@ class NusukHomeHeroSection extends ConsumerWidget {
   );
 
   static const _bottomRadius = 36.0;
-  static const _overlayBottom = -104.0;
+  static const _overlayBottom = -140.0;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

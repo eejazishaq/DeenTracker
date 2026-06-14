@@ -72,7 +72,7 @@ class _NusukQiblaHeaderState extends ConsumerState<NusukQiblaHeader> {
           16,
           widget.includeBackground
               ? 20
-              : (widget.onPrayerTimes != null ? 72 : 8),
+              : (widget.onPrayerTimes != null ? 82 : 8),
         ),
         child: qiblaAsync.when(
           loading: () => _QiblaArcContent(
@@ -168,7 +168,7 @@ class _NusukArcLayout {
   double get textTop => apex.dy + 30;
 
   /// Full stack height — arc dome through service row inside the bowl.
-  double get totalHeight => center.dy + 38;
+  double get totalHeight => center.dy + 18;
 
   /// Angle on the upper semicircle: t=0 left, t=0.5 top, t=1 right.
   static double _upperArcAngle(double t) => math.pi + (math.pi * t);

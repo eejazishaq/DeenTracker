@@ -19,51 +19,29 @@ class NusukServiceCards extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final timesLabel = AppTranslations.of(
-      context,
-      'home_service_prayer_times',
-      en: 'Prayer Times',
-      ar: 'مواقيت الصلاة',
-    );
-    final trackerLabel = AppTranslations.of(
-      context,
-      'home_service_prayer_tracker',
-      en: 'Prayer Tracker',
-      ar: 'متابعة الصلاة',
-    );
-
     if (insideArc) {
-      final arcTimesLabel = AppTranslations.of(
-        context,
-        'home_service_times_short',
-        en: 'Times',
-        ar: 'المواقيت',
-      );
-      final arcTrackerLabel = AppTranslations.of(
-        context,
-        'home_service_tracker_short',
-        en: 'Tracker',
-        ar: 'المتابعة',
-      );
       return Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           _ServiceCard(
             icon: Icons.access_time_rounded,
-            label: arcTimesLabel,
+            label: HomeServiceLabels.prayerTimesShort(context),
             onTap: onPrayerTimes,
             insideArc: true,
           ),
           const SizedBox(width: 10),
           _ServiceCard(
             icon: Icons.checklist_rounded,
-            label: arcTrackerLabel,
+            label: HomeServiceLabels.prayerTrackerShort(context),
             onTap: onPrayerTracker,
             insideArc: true,
           ),
         ],
       );
     }
+
+    final timesLabel = HomeServiceLabels.prayerTimes(context);
+    final trackerLabel = HomeServiceLabels.prayerTracker(context);
 
     if (compact) {
       return Row(
