@@ -1,0 +1,61 @@
+name: deentrack
+description: DeenTrack - Islamic Habit Tracker & Salah Companion
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.5.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # State management & DI
+  flutter_riverpod: ^2.6.1
+
+  # Navigation
+  go_router: ^14.6.2
+
+  # Database
+  isar: ^3.1.0+1
+  isar_flutter_libs: ^3.1.0+1
+  path_provider: ^2.1.5
+
+  # Prayer, location, compass (wired in later phases)
+  adhan: ^2.0.0+1
+  geolocator: ^13.0.2
+  flutter_compass: ^0.8.1
+  permission_handler: ^11.3.1
+  timezone: ^0.10.0
+
+  # Notifications & audio (wired in later phases)
+  flutter_local_notifications: ^18.0.1
+  audioplayers: ^6.1.0
+
+  # Charts (wired in later phases)
+  fl_chart: ^0.69.2
+
+  # Localization
+  easy_localization: ^3.0.7
+
+  # Theme typography
+  google_fonts: ^6.2.1
+
+  # Utilities
+  equatable: ^2.0.7
+  hijri_date: ^1.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  build_runner: ^2.4.13
+  isar_generator: ^3.1.0+1
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/translations/

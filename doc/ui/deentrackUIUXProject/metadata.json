@@ -1,0 +1,6 @@
+{
+  "name": "DeenTrack",
+  "description": "Islamic Habit Tracker & Salah Companion with premium design, interactive Qibla, elegant calendar, habits, and AI reflection support.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;640;700;900&family=JetBrains+Mono:wght@400;500;700;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+/* Accessibility scale classes */
+.text-normal-scale {
+  font-size: 100%;
+}
+.text-large-scale {
+  font-size: 110%;
+}
+.text-extra-large-scale {
+  font-size: 122%;
+}
+
+/* Hide scrollbars for absolute slick phone viewports */
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hidden {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
